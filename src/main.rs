@@ -3,9 +3,8 @@ use std::fs;
 use std::io::BufRead;
 
 fn main() {
-    let files =
-        std::fs::read_dir("/home/cgoeldel/epigenomics/methylome/MA3_new_total_original_methylome")
-            .expect("SDSS");
+    let files = std::fs::read_dir("/home/constantin/methylome/MA3_new_total_original_methylome")
+        .expect("SDSS");
     let x = [
         (0, 0),
         (1, 2),
@@ -40,11 +39,7 @@ fn main() {
             }
         }
         // Write output to file /home/cgoeldel/epigenomics/methylome/complete
-        fs::write(
-            format!("/home/cgoeldel/epigenomics/methylome/complete_{i}"),
-            output,
-        )
-        .unwrap();
+        fs::write(format!("/home/constantin/methylome/complete_{i}"), output).unwrap();
     }
 }
 
