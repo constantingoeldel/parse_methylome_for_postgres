@@ -59,9 +59,21 @@ fn parse(line: &str, x: (i32, i32)) -> Result<String, Box<dyn Error>> {
     let posterior_max = line.next().unwrap().parse::<f32>()?;
     let status = line.next().unwrap();
     let rc = line.next().unwrap().parse::<f32>()?;
+    let trinucleotid = line.next().unwrap();
 
     Ok(format!(
-        "{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\n",
-        seqname, start, strand, context, methylated, total, posterior_max, status, rc, x.0, x.1
+        "{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\n",
+        seqname,
+        start,
+        strand,
+        context,
+        methylated,
+        total,
+        posterior_max,
+        status,
+        rc,
+        trinucleotid,
+        x.0,
+        x.1
     ))
 }
